@@ -28,12 +28,17 @@ RUN apt-get install -y libasound2-dev
 RUN apt-get install -y libwebp-dev libpng-dev libtiff5-dev libopenexr-dev libgdal-dev
 RUN apt-get install -y python3-tk python3-numpy
 
+RUN apt-get install -y ocrmypdf pngquant
+
 # Install ZBar
 RUN apt-get install -y zbar-tools libzbar-dev
 
 # Copy and Install python PIP packages
 COPY ./assets/requirements.txt /root/requirements.txt
 RUN pip install --no-cache-dir -r /root/requirements.txt
+
+RUN apt-get install -y tesseract-ocr-slk
+RUN apt-get install -y openjdk-11-jre
 
 WORKDIR /srv/pyapp
 

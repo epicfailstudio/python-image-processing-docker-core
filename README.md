@@ -21,4 +21,6 @@ qrtools
 pdf2image
 opencv-python
 opencv-contrib-python
+tabula-py
+ocrmypdf
 ```
