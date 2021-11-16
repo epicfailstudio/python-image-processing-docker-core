@@ -23,4 +23,5 @@ opencv-python
 opencv-contrib-python
 tabula-py
 ocrmypdf
+pymongo
 ```

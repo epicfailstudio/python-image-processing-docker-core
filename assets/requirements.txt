@@ -20,6 +20,9 @@ scikit-image
 scikit-learn
 matplotlib
 sklearn
+pymongo
+dnspython
+mongo-queue-service
 
 connexion[swagger-ui] >= 2.6.0; python_version>="3.6"
 # 2.3 is the last version that supports python 3.4-3.5
