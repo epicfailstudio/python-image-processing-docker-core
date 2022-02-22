@@ -25,3 +25,6 @@ tabula-py
 ocrmypdf
 pymongo
 ```
+
+## Default working directory and script
+To run your application you can map your volume to `/srv/pyapp` with main in `app.py`
