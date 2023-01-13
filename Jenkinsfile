@@ -1,9 +1,4 @@
 pipeline {
-    agent {
-        node {
-            label 'master'
-        }
-    }
     options {
         timestamps()
         disableConcurrentBuilds()
