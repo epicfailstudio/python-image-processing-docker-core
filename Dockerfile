@@ -32,4 +32,7 @@ RUN apt-get install -y jbig2dec
 
 WORKDIR /srv/pyapp
 
-CMD [ "python", "./app.py" ]
+EXPOSE 5123
+
+ENTRYPOINT [ "gunicorn" ]
+CMD ["-w", "2", "-b", "0.0.0.0:5123", "wsgi"]
