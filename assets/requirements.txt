@@ -1,4 +1,4 @@
-PyPDF2
+PyPDF2<4.0
 EbookLib == 0.16
 pocketsphinx == 0.1.15
 textract

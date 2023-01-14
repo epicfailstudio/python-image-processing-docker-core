@@ -10,7 +10,7 @@ RUN apt-get install -y cron wget dnsutils net-tools libc-bin locales gnupg
 
 # Install python3 and dependencies needed for OCR and document processing
 RUN apt-get install -y libxml2-dev libxslt1-dev antiword poppler-utils zlib1g-dev build-essential libssl-dev libffi-dev libblas-dev libatlas-base-dev unrtf
-RUN apt-get install -y tesseract-ocr tesseract-ocr-slk
+RUN apt-get install -y tesseract-ocr tesseract-ocr-all
 RUN apt-get install -y flac ffmpeg lame sox swig
 RUN apt-get install -y libmad0 libsox-fmt-mp3 libjpeg-dev libpulse-dev libasound2-dev libwebp-dev libpng-dev libtiff5-dev libopenexr-dev libgdal-dev
 RUN apt-get install -y python3-tk python3-numpy
