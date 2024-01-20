@@ -1,4 +1,4 @@
-FROM python:3.9-buster
+FROM python:3.9-bullseye
 
 RUN apt-get update
 RUN apt-get install -y libmcrypt-dev libc-client-dev libkrb5-dev zlib1g-dev libpq-dev libcurl3-dev default-mysql-client libmagickwand-dev --no-install-recommends
@@ -15,7 +15,7 @@ RUN apt-get install -y flac ffmpeg lame sox swig
 RUN apt-get install -y libmad0 libsox-fmt-mp3 libjpeg-dev libpulse-dev libasound2-dev libwebp-dev libpng-dev libtiff5-dev libopenexr-dev libgdal-dev
 RUN apt-get install -y python3-tk python3-numpy
 
-RUN pip install git+https://github.com/jbarlow83/OCRmyPDF.git
+RUN pip install git+https://github.com/jbarlow83/OCRmyPDF.git@v15.4.4
 RUN apt-get install -y pngquant
 
 # Install ZBar

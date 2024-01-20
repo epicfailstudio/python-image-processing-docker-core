@@ -19,7 +19,6 @@ scipy
 scikit-image
 scikit-learn
 matplotlib
-sklearn
 pymongo
 dnspython
 mongo-queue-service
