@@ -1,4 +1,4 @@
-FROM python:3.9-bullseye
+FROM python:3.11-bookworm
 
 RUN apt-get update
 RUN apt-get install -y libmcrypt-dev libc-client-dev libkrb5-dev zlib1g-dev libpq-dev libcurl3-dev default-mysql-client libmagickwand-dev --no-install-recommends
@@ -25,10 +25,20 @@ RUN apt-get install -y zbar-tools libzbar-dev
 COPY ./assets/requirements.txt /root/requirements.txt
 RUN pip install --no-cache-dir -r /root/requirements.txt
 
-RUN apt-get install -y openjdk-11-jre
+RUN apt-get install -y openjdk-17-jre
 
 RUN apt-get install -y ghostscript
+RUN apt-get install -y libleptonica-dev
 RUN apt-get install -y jbig2dec
+
+WORKDIR /tmp
+
+RUN git clone https://github.com/agl/jbig2enc
+
+WORKDIR /tmp/jbig2enc
+RUN bash ./autogen.sh
+RUN ./configure && make
+RUN make install
 
 WORKDIR /srv/pyapp
 

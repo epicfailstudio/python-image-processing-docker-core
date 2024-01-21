@@ -6,7 +6,7 @@ pipeline {
     }
     environment {
         PACKAGE = 'python-image-processing-docker-core'
-        VERSION = '3.9-gunicorn'
+        VERSION = '3.11-gunicorn'
         REGISTRY = "epicfailstudio/python-image-processing-docker-core"
     }
     stages {
