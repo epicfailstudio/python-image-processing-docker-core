@@ -18,6 +18,8 @@ RUN apt-get install -y python3-tk python3-numpy
 RUN pip install git+https://github.com/jbarlow83/OCRmyPDF.git@v15.4.4
 RUN apt-get install -y pngquant
 
+RUN apt install -y libpoppler-cpp-dev pkg-config
+
 # Install ZBar
 RUN apt-get install -y zbar-tools libzbar-dev
 
@@ -45,4 +47,4 @@ WORKDIR /srv/pyapp
 EXPOSE 5123
 
 ENTRYPOINT [ "gunicorn" ]
-CMD ["-w", "2", "-b", "0.0.0.0:5123", "wsgi"]
+CMD ["-w", "2", "-b", "0.0.0.0:5123", "-k", "uvicorn.workers.UvicornWorker", "wsgi"]

@@ -20,14 +20,14 @@ scikit-learn
 matplotlib
 pymongo
 dnspython
+pdftotext
 mongo-queue-service
 pdfminer.six==20221105
 jpype1
 sentry-sdk
 
-connexion[swagger-ui,uvicorn] >= 2.6.0; python_version>="3.6"
-# 2.3 is the last version that supports python 3.4-3.5
-connexion[swagger-ui,uvicorn] <= 2.3.0; python_version=="3.5" or python_version=="3.4"
+uvicorn
+connexion[flask,swagger-ui,uvicorn] == 2.14.2; python_version>="3.6"
 # connexion requires werkzeug but connexion < 2.4.0 does not install werkzeug
 # we must peg werkzeug versions below to fix connexion
 # https://github.com/zalando/connexion/pull/1044
