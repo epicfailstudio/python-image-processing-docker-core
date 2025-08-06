@@ -25,6 +25,7 @@ RUN apt-get install -y zbar-tools libzbar-dev
 
 # Copy and Install python PIP packages
 COPY ./assets/requirements.txt /root/requirements.txt
+RUN python -m pip cache purge
 RUN pip install --no-cache-dir -r /root/requirements.txt
 
 RUN apt-get install -y openjdk-17-jre
